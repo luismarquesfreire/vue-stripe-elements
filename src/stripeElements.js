@@ -31,7 +31,7 @@ export const baseStyle = {
   }
 }
 
-function init(key, options = {}) {
+export function init(key, options = {}) {
   if (typeof key === "object" && typeof key.elements === "function") {
     Stripe.instance = key
   }
