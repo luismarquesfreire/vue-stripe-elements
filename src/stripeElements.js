@@ -6,9 +6,9 @@ export const Stripe = {
   paymentRequest: null,
   redirectToCheckout: null,
   retrievePaymentIntent: null,
-  handleCardPayment: null,
-  handleCardSetup: null,
+  confirmCardSetup: null,
   handleCardAction: null,
+  confirmCardPayment: null,
   confirmPaymentIntent: null,
   createPaymentMethod: null,
   elements: null
@@ -61,9 +61,9 @@ export function create(elementType, key_or_stripe, options = {}) {
   Stripe.paymentRequest = (options) => Stripe.instance.paymentRequest(options)
   Stripe.redirectToCheckout = (options) => Stripe.instance.redirectToCheckout(options)
   Stripe.retrievePaymentIntent = (clientSecret) => Stripe.instance.retrievePaymentIntent(clientSecret)
-  Stripe.handleCardPayment = (clientSecret, data) => Stripe.instance.handleCardPayment(clientSecret, element, data)
-  Stripe.handleCardSetup = (clientSecret, data) => Stripe.instance.handleCardSetup(clientSecret, element, data)
+  Stripe.confirmCardSetup = (clientSecret, data) => Stripe.instance.confirmCardSetup(clientSecret, element, data)
   Stripe.handleCardAction = (clientSecret) => Stripe.instance.handleCardAction(clientSecret)
+  Stripe.confirmCardPayment = (clientSecret, data) => Stripe.instance.confirmCardPayment(clientSecret, element, data)
   Stripe.confirmPaymentIntent = (clientSecret, data) => Stripe.instance.confirmPaymentIntent(clientSecret, element, data)
   Stripe.createPaymentMethod = (cardType, data) => Stripe.instance.createPaymentMethod(cardType, element, data)
   
@@ -79,8 +79,8 @@ export function destroy() {
     Stripe.paymentRequest = null
     Stripe.redirectToCheckout = null
     Stripe.retrievePaymentIntent = null
-    Stripe.handleCardPayment = null
-    Stripe.handleCardSetup = null
+    Stripe.confirmCardPayment = null
+    Stripe.confirmCardSetup = null
     Stripe.handleCardAction = null
     Stripe.confirmPaymentIntent = null
     Stripe.createPaymentMethod = null
